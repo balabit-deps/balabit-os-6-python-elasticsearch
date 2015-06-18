@@ -1,0 +1,28 @@
+Description: Remove nosexcover from test requirements
+ nosexcover only serves to create XML reports from test runs and has not been
+ packaged for Debian yet.
+Author: Michael Fladischer <fladi@debian.org>
+Last-Update: 2014-09-03
+Forwarded: not-needed
+
+--- a/setup.py
++++ b/setup.py
+@@ -20,7 +20,6 @@
+     'nose',
+     'coverage',
+     'mock',
+-    'nosexcover'
+ ]
+ 
+ # use external unittest for 2.6
+--- a/test_elasticsearch/run_tests.py
++++ b/test_elasticsearch/run_tests.py
+@@ -59,7 +59,7 @@
+     if argv is None:
+         argv = [
+             'nosetests', '--with-xunit',
+-            '--with-xcoverage', '--cover-package=elasticsearch', '--cover-erase',
++            '--cover-package=elasticsearch', '--cover-erase',
+             '--logging-filter=elasticsearch', '--logging-level=DEBUG',
+             '--verbose',
+         ]

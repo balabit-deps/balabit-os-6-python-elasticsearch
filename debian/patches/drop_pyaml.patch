@@ -1,0 +1,17 @@
+Description: Remove pyaml from test requirements
+ pyaml only serves cosmetic purposes by pretty printing YAML and has not been
+ packaged yet for Debian.
+Author: Michael Fladischer <fladi@debian.org>
+Last-Update: 2014-09-03
+Forwarded: not-needed
+
+--- a/setup.py
++++ b/setup.py
+@@ -20,7 +20,6 @@
+     'nose',
+     'coverage',
+     'mock',
+-    'pyaml',
+     'nosexcover'
+ ]
+ 
